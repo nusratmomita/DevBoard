@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <title>DevBoard Blogs</title>
+</head>
+<body>
+    <header class="bg-white p-5 shadow-md m-10 rounded-lg">
+        <div class="flex justify-between items-center">
+            <div class="flex gap-2">
+                <img class="w-12"src="assets/logo.png" alt="logo">
+                <h1 class="text-xl mt-2 ">Dev<span class="text-xl font-bold">Board</span></h1>
+            </div>
+            <div>
+                <button id="backToDesk" class="cursor-pointer bg-blue-500 p-2 rounded-xl text-lg font-semibold">Back To Desk</button> 
+            </div>
+        </div>
+    </header>
+    <main>
+        <div>
+            <h1 class="text-center font-bold text-2xl">Blogs</h1>
+        </div>
+
+        <!-- question -->
+        <div >
+            <div class="font-semibold text-xl bg-white p-5 shadow-md m-15 rounded-lg">
+                <h1>Question-1: What are the different ways to select an element in the DOM?</h1>
+                <br>
+                <p class="text-gray-700">There are different ways to select an element in DOM.Such as: getElementById() , getElementsByTagName(), getElementsByClassName() , querySelector() , querySelectorAll().
+                   Sturcture is : document.getElementById("form"); here "form" is the id of the element.
+                </p>
+            </div>
+            <div class="font-semibold text-xl bg-white p-5 shadow-md m-15 rounded-lg">
+                <h1>Question-2: What is the difference between innerHTML, innerText, and textContent ?</h1>
+                <br>
+                <p class="text-gray-700">The difference between these three properties is: <br>
+                    <span class="underline">innerHTML:</span> It gives us the inner text including all the tags written within an Element. Such as: Suppose we have an element h1 and inside it we have Hi text.
+                    If we write (document.getElementsByTagName('h1').innerHTML) then this will return us Hi with h1 tag.
+                    <br>
+                    <span class="underline">innerText:</span> It gives us the inner text written within an Element,ignoring the whitespacing. Such as: Suppose we have an element h1 and inside it we have Hi text.
+                    If we write (document.getElementsByTagName('h1').innerText) then this will return us Hi,just the text.
+                    <br>
+                    <span class="underline" >textContent:</span> It also gives us the inner text written within an Element but it does not ignore the whitespacing. Such as: Suppose we have an element h1 and inside it we have Hi with a space.
+                    If we write (document.getElementsByTagName('h1').textContent) then this will return us Hi ,with a whitespace.
+                </p>
+            </div>
+            <div class="font-semibold text-xl bg-white p-5 shadow-md m-15 rounded-lg">
+                <h1>Question-3: What is event delegation in the DOM?</h1>
+                <br>
+                <p class="text-gray-700">It is a technique where we can add event listerners to the parent element instead of its children elements to avoid the problem of event bubbling.
+                </p>
+            </div>
+            <div class="font-semibold text-xl bg-white p-5 shadow-md m-15 rounded-lg">
+                <h1>Question-4: What is event bubbling in the DOM?</h1>
+                <br>
+                <p class="text-gray-700">It is technique where the program first captures the event from top the root and goes till the targeted element and then starts bubbling up from the targeted element to the root element.
+                </p>
+            </div>
+            <div class="font-semibold text-xl bg-white p-5 shadow-md m-15 rounded-lg">
+                <h1>Question-5: How do you create, add, and remove elements using JavaScript?</h1>
+                <br>
+                <p class="text-gray-700">To create an element we use document.createElement('p'),here p is a paragraph element.
+                    <br>
+                    To add an element to the root element or simply add elements , we use document.appendChild('list').here list is the element we want to add.
+                    <br>
+                    To remove an element we use document.removeChild('list'),removing the list element created on the root.
+                </p>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        document.getElementById('backToDesk').addEventListener('click',function(){
+        window.location.href = 'index.html';
+    })
+    </script>
+   
+    <script src="js/blogs.js"></script>
+</body>
+</html>

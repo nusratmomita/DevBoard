@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <title>DevBoard</title>
+</head>
+<body id="body" class="">
+    <header class="bg-white p-5 shadow-md m-10 rounded-lg">
+        <div class="flex justify-between items-center">
+            <div class="flex gap-1">
+                <img class="w-12"src="assets/logo.png" alt="logo">
+                <h1 class="text-xl mt-2 ">Dev<span class="text-xl font-bold">Board</span></h1>
+            </div>
+            <div class="flex gap-5 justify-between">
+                <div class="bg-gray-300 p-2 rounded-2xl flex gap-2 items-center">
+                    <img class="w-7 h-7" src="assets/checkbox.png" alt="checkbox">
+                    <h3 id="totalTaskCompleted" class="text-xl font-bold">23</h3>
+                </div>
+                <button onclick=changingColors() id="color-theme" class="cursor-pointer"><img src="assets/theme-btn.png" alt="theme"></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex flex-row">
+        <section class="bg-white p-5 w-5/8 h-190 shadow-md m-10 rounded-lg ">
+            <!-- discover section -->
+            <section class="flex justify-between gap-3 px-1">
+                <!-- task assigned -->
+                <div class="bg-gray-100 p-7 rounded-2xl w-55 h-25  flex gap-3 -ml-1">
+                    <div class="bg-white w-13 h-13 rounded-full">
+                        <img class="ml-1 mt-1 p-2"src="assets/checkbox.png" alt="checkbox">    
+                    </div>
+            
+                    <div>
+                        <h4 class="font-normal text-base">Task Assigned</h4>
+                        <h1 id="incomplete-task" class="font-bold text-xl -mt-2">6</h1>
+                    </div>
+                    
+                </div>
+                <!-- discover somthing -->
+                <button id="discover-something" class="cursor-pointer bg-gradient-to-r from-[#3752FD] via-[#6C7FFA] to-[#9BA8F8] rounded-xl w-115 h-25 flex justify-around">
+                    <div class="mt-2">
+                        <img src="assets/board.png" alt="board">
+                    </div>
+                    <div class="text-white font-bold mt-7 -ml-25">
+                        <h3>Discover Something New Today!</h3>
+                    </div>
+                </button>
+                <!-- date -->
+                <div id="date-box" class="bg-gray-100 p-7 rounded-2xl   flex gap-3 -ml-1">
+                    <div class=" bg-white w-13 h-13 rounded-full">
+                        <img class="ml-3 mt-3" src="assets/calender.png" alt="calender">  
+                    </div>
+                    <div class="mt-3">
+                        <h2 id="date"></h2>
+                    </div>
+                    
+                </div>
+            </section>
+            <!-- card section -->
+            <section class="mt-4 grid grid-cols-3 grid-rows-3 gap-3">
+                <div class="bg-gray-100 w-75 h-65 rounded-2xl p-7">
+                    <button class="bg-white p-2 rounded-xl font-medium text-sm">ShopEase</button>
+                    <h1 id="task-one" class="font-semibold text-lg mt-3">Fix Mobile Button Issue</h1>
+                    <div class="bg-white text-gray-600 p-1 mt-3 rounded-xl font-normal text-sm">
+                        <p class="p-2">Debug using Chrome DevTools, check for overlapping</p>
+                    </div>
+                    <div class="mt-4 flex gap-8">
+                        <div>
+                            <h5 class="text-gray-600">Deadline</h5>
+                            <h4 class="text-lg font-semibold">2 March 2025</h4>
+                        </div>
+                        <button id="completed-btn-one" class="cursor-pointer mt-1 bg-[#3752FD] text-white w-23 h-10 p-1 font-medium text-base rounded-lg">Completed</button>
+                    </div>
+                    
+                </div>
+                <div class="bg-gray-100 w-75 h-65 rounded-2xl p-7">
+                    <button class="bg-white p-2 rounded-xl font-medium text-sm">CloudSync</button>
+                    <h1 id="task-two" class="font-semibold text-lg mt-3">Add Dark Mode</h1>
+                    <div class="bg-white text-gray-600 p-1 mt-3 rounded-xl font-normal text-sm">
+                        <p class="p-2">Store the user's preference in localStorage, update CSS variable</p>
+                    </div>
+                    <div class="mt-4 flex gap-8">
+                        <div>
+                            <h5 class="text-gray-600">Deadline</h5>
+                            <h4 class="text-lg font-semibold">3 March 2025</h4>
+                        </div>
+                        <button id="completed-btn-two" class="cursor-pointer mt-1 bg-[#3752FD] text-white w-23 h-10 p-1 font-medium text-base rounded-lg">Completed</button>
+                    </div>
+                    
+                </div>
+                <div class="bg-gray-100 w-75 h-65 rounded-2xl p-7">
+                    <button class="bg-white p-2 rounded-xl font-medium text-sm">SwiftPay</button>
+                    <h1 id="task-three" class="font-semibold text-lg mt-3">Optimize  Home page </h1>
+                    <div class="bg-white text-gray-600 p-1 mt-3 rounded-xl font-normal text-sm">
+                        <p class="p-2">Debug using Chrome DevTools, check for overlapping</p>
+                    </div>
+                    <div class="mt-4 flex gap-8">
+                        <div>
+                            <h5 class="text-gray-600">Deadline</h5>
+                            <h4 class="text-lg font-semibold">21 March 2026</h4>
+                        </div>
+                        <button id="completed-btn-three" class="cursor-pointer mt-1 bg-[#3752FD] text-white w-23 h-10 p-1 font-medium text-base rounded-lg">Completed</button>
+                    </div>
+                    
+                </div>
+                <div class="bg-gray-100 w-75 h-65 rounded-2xl p-7">
+                    <button class="bg-white p-2 rounded-xl font-medium text-sm">Meta</button>
+                    <h1 id="task-four" class="font-semibold text-lg mt-3">Add new emoji 🤲</h1>
+                    <div class="bg-white text-gray-600 p-1 mt-3 rounded-xl font-normal text-sm">
+                        <p class="p-2">Debug using Chrome DevTools, check for overlapping</p>
+                    </div>
+                    <div class="mt-4 flex gap-8">
+                        <div>
+                            <h5 class="text-gray-600">Deadline</h5>
+                            <h4 class="text-lg font-semibold">1 March 2025</h4>
+                        </div>
+                        <button id="completed-btn-four" class="cursor-pointer mt-1 bg-[#3752FD] text-white w-23 h-10 p-1 font-medium text-base rounded-lg">Completed</button>
+                    </div>
+                    
+                </div>
+                <div class="bg-gray-100 w-75 h-65 rounded-2xl p-7">
+                    <button class="bg-white p-2 rounded-xl font-medium text-sm">Google LLC</button>
+                    <h1 id="task-five"  class="font-semibold text-lg mt-3">Integrate OpenAI API </h1>
+                    <div class="bg-white text-gray-600 p-1 mt-3 rounded-xl font-normal text-sm">
+                        <p class="p-2">Debug using Chrome DevTools, check for overlapping</p>
+                    </div>
+                    <div class="mt-4 flex gap-8">
+                        <div>
+                            <h5 class="text-gray-600">Deadline</h5>
+                            <h4 class="text-lg font-semibold">21 March 2026</h4>
+                        </div>
+                        <button id="completed-btn-five" class="cursor-pointer mt-1 bg-[#3752FD] text-white w-23 h-10 p-1 font-medium text-base rounded-lg">Completed</button>
+                    </div>
+                    
+                </div>
+                <div class="bg-gray-100 w-75 h-65 rounded-2xl p-7">
+                    <button class="bg-white p-2 rounded-xl font-medium text-sm">Glassdoor</button>
+                    <h1 id="task-six" class="font-semibold text-lg mt-3">Improve Job searching </h1>
+                    <div class="bg-white text-gray-600 p-1 mt-3 rounded-xl font-normal text-sm">
+                        <p  class="p-2">Debug using Chrome DevTools, check for overlapping</p>
+                    </div>
+                    <div class="mt-4 flex gap-8">
+                        <div>
+                            <h5 class="text-gray-600">Deadline</h5>
+                            <h4 class="text-lg font-semibold">1 March 2025</h4>
+                        </div>
+                        <button id="completed-btn-six" class="cursor-pointer mt-1 bg-[#3752FD] text-white w-23 h-10 p-1 font-medium text-base rounded-lg">Completed</button>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <!-- sidebar -->
+        <section id="sidebar" class="bg-white  w-5/8 h-190 shadow-md m-10 rounded-lg p-5 flex flex-col items-center gap-5">
+            <div class="flex gap-3">
+                <img class="w-8" src="assets/activity.png" alt="activity">
+                <h3 class="font-semibold text-xl">Activity Log</h3>
+            </div>
+            <button id="clear-history" class="cursor-pointer mt-1 bg-[#3752FD] text-white w-30 h-15 font-bold text-base rounded-lg">Clear History</button>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('discover-something').addEventListener('click',function(){
+            window.location.href = 'blogs.html';
+        })
+
+        const todaysDate = new Date();
+        const date = todaysDate.getDate();
+        const month = todaysDate.getMonth();
+        const year = todaysDate.getFullYear();
+
+        console.log(date,month,year)
+        const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+        let day = days[todaysDate.getDay()]
+
+        const dateOfToday = document.getElementById('date');
+        dateOfToday.innerHTML = `${day},${date}/${month}/${year}`;
+
+        const theme = document.getElementById('color-theme');
+        function changingColors(){
+            return Math.floor(Math.random() * 255)
+        }
+
+        const Body = document.getElementById('body')
+        const HTML = document.documentElement
+        theme.addEventListener('click',function(){
+            const applyingColor = `rgb(${changingColors()},${changingColors()},${changingColors()})`
+            HTML.style.backgroundColor = applyingColor
+            Body.style.backgroundColor = applyingColor
+        })
+        
+    
+    </script>
+
+    <script src="Utilities/makeAList.js"></script>
+    <script src="Utilities/completedBtnFunction.js"></script>
+    <script src="js/completeButton.js"></script>
+
+</body>
+</html>
