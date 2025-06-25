@@ -17,10 +17,10 @@
 </ul>
 
 ### 🎯 Dependencies:
-<h1>HTML5</h1>
-<h1>TailwindCSS - v4.1.8</h1> 
-<h1>Daisy UI - v5.0.43</h1>
-<h1>JavaScript - ECMAScript 2023</h1>
+<h4>HTML5</h4>
+<h4>TailwindCSS - v4.1.8</h4> 
+<h4>Daisy UI - v5.0.43</h4>
+<h4>JavaScript - ECMAScript 2023</h4>
 
 ### To run this project locally:
 1. Open a terminal and clone this project.
